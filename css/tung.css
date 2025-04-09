@@ -8,8 +8,7 @@ header {
   background-color: #336699;
   color: white;
   text-align: center;
-  height: 70px;
-  align-items: center;
+  padding: 5px;
 }
 
 header h1 {
