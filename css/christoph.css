@@ -43,4 +43,14 @@ nav a {
 main {
   flex: 1;
   padding: 2rem;
+  width: 100%;
+}
+
+.mainContent {
+  min-width: 75%;
+}
+
+.asideContent {
+  min-width: 25%;
+  background-color: lightslategray;
 }
