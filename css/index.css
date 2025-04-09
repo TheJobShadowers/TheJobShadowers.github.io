@@ -5,9 +5,15 @@ body {
 }
 
 header {
-  background-color: #444;
+  background-color: #336699;
   color: white;
   text-align: center;
+  height: 70px;
+  align-items: center;
+}
+
+header h1 {
+  padding: 5px;
 }
 
 .container {
