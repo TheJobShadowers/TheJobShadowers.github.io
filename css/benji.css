@@ -8,8 +8,7 @@ header {
   background-color: #336699;
   color: white;
   text-align: center;
-  height: 7%;
-  align-items: center;
+  padding: 5px;
 }
 
 header h1 {
@@ -54,3 +53,4 @@ main {
   min-width: 25%;
   background-color: lightslategray;
 }
+
