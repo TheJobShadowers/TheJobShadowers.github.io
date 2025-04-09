@@ -42,8 +42,10 @@ main {
 
 .mainContent {
   min-width: 73%;
+  
 }
 
 .asideContent {
   min-width: 25%;
+  background-color: lightslategray;
 }
