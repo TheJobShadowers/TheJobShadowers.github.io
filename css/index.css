@@ -41,11 +41,12 @@ nav a {
 
 main {
   display: flex;
-  padding: 2rem;
+  padding: 5px;
+  width: 100%;
 }
 
 .mainContent {
-  min-width: 73%;
+  min-width: 75%;
 }
 
 .asideContent {
