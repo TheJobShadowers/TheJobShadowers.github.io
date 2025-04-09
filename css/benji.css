@@ -39,3 +39,11 @@ main {
   flex: 1;
   padding: 2rem;
 }
+
+.mainContent {
+  min-width: 73%;
+}
+
+.asideContent {
+  min-width: 25%;
+}
