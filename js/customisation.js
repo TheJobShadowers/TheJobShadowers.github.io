@@ -134,3 +134,87 @@ function clearAside() {
     const aside = document.querySelector(".asideContent");
     aside.innerHTML = "";
 }
+
+
+function AddMiniGame(gameName, target = "main") {
+    const container =
+        target === "aside"
+            ? document.querySelector(".asideContent")
+            : document.querySelector(".mainContent");
+
+    if (!container) {
+        console.error("Target container not found");
+        return;
+    }
+
+    switch (gameName) {
+        case "MathQuiz":
+            createMathQuiz(container);
+            break;
+        // Future games can be added here
+        case "GKQuiz":
+        case "Hangman":
+        case "GuessTheWord":
+            container.innerHTML += `<p>The game "${gameName}" will be added soon!</p>`;
+            break;
+        default:
+            container.innerHTML += `<p>Game "${gameName}" not recognized.</p>`;
+    }
+}
+
+// -------------------- MATH QUIZ GAME --------------------
+
+function createMathQuiz(container) {
+    // Clear previous content
+    container.innerHTML = "";
+
+    const quizBox = document.createElement("div");
+    quizBox.style.border = "2px solid #007BFF";
+    quizBox.style.padding = "20px";
+    quizBox.style.borderRadius = "10px";
+    quizBox.style.backgroundColor = "#f0f8ff";
+    quizBox.style.marginTop = "10px";
+
+    const questionEl = document.createElement("p");
+    const input = document.createElement("input");
+    input.type = "number";
+    input.placeholder = "Your answer";
+    input.style.marginRight = "10px";
+
+    const button = document.createElement("button");
+    button.textContent = "Submit";
+
+    const feedback = document.createElement("p");
+
+    // Generate a simple random math question
+    const num1 = getRandomInt(5, 20);
+    const num2 = getRandomInt(2, 12);
+    const operations = ["+", "-", "*"];
+    const op = operations[getRandomInt(0, operations.length - 1)];
+    const questionText = `${num1} ${op} ${num2}`;
+    const correctAnswer = eval(questionText);
+
+    questionEl.textContent = `What is ${questionText}?`;
+
+    button.onclick = () => {
+        const userAnswer = Number(input.value);
+        if (userAnswer === correctAnswer) {
+            feedback.textContent = "How awesome!!! 🎉";
+            feedback.style.color = "green";
+        } else {
+            feedback.textContent = "Oops! Try again!";
+            feedback.style.color = "red";
+        }
+    };
+
+    quizBox.appendChild(questionEl);
+    quizBox.appendChild(input);
+    quizBox.appendChild(button);
+    quizBox.appendChild(feedback);
+    container.appendChild(quizBox);
+}
+
+// Utility function for random numbers
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
