@@ -36,13 +36,12 @@ nav a {
 }
 
 main {
-  flex: 1;
+  display: flex;
   padding: 2rem;
 }
 
 .mainContent {
   min-width: 73%;
-  
 }
 
 .asideContent {
