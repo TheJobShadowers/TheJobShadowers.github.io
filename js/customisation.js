@@ -155,7 +155,7 @@ function AddMiniGame(gameName, target = "main") {
         case "GKQuiz":
         case "Hangman":
         case "GuessTheWord":
-            container.innerHTML += `<p>The game "${gameName}" will be added soon!</p>`;
+            createGuessTheWord(container);
             break;
         default:
             container.innerHTML += `<p>Game "${gameName}" not recognized.</p>`;
