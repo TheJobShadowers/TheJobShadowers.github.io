@@ -7,7 +7,14 @@ function changeHeaderFontColor(color) {
 }
 
 function changeHeaderFontSize(size) {
-    document.querySelector("header").style.fontSize = size + "px";
+    let isTooBig = size > 30;
+
+    if (isTooBig) {
+        size = 28;
+        document.querySelector("header").style.fontSize = size + "px";
+    } else {
+        document.querySelector("header").style.fontSize = size + "px";
+    }
 }
 
 function changeSidebarBackground(color) {
