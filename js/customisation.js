@@ -65,3 +65,72 @@ function extractYouTubeVideoID(url) {
     return match ? match[1] : null;
 }
 
+// --- HEADER FUNCTIONS ---
+function changeHeaderText(text) {
+    const header = document.querySelector("header h1");
+    if (header) header.textContent = text;
+}
+
+function addEmojiToHeader(emoji) {
+    const header = document.querySelector("header h1");
+    if (header) header.textContent += ` ${emoji}`;
+}
+
+function changeHeaderFontFamily(font) {
+    const header = document.querySelector("header");
+    if (header) header.style.fontFamily = font;
+}
+
+// --- NAVIGATION FUNCTIONS ---
+function highlightNavLink(name, color = "yellow") {
+    const links = document.querySelectorAll("nav a");
+    links.forEach(link => {
+        if (link.textContent.trim().toLowerCase() === name.toLowerCase()) {
+            link.style.backgroundColor = color;
+        }
+    });
+}
+
+// --- MAIN CONTENT FUNCTIONS ---
+function addParagraphToMain(text) {
+    const mainContent = document.querySelector(".mainContent");
+    const p = document.createElement("p");
+    p.textContent = text;
+    mainContent.appendChild(p);
+}
+
+function setMainContentBackground(color) {
+    const mainContent = document.querySelector(".mainContent");
+    mainContent.style.backgroundColor = color;
+}
+
+function clearMainContent() {
+    const mainContent = document.querySelector(".mainContent");
+    mainContent.innerHTML = "";
+}
+
+// --- ASIDE CONTENT FUNCTIONS ---
+function addImageToAside(url, alt = "Image", width = "100%") {
+    const aside = document.querySelector(".asideContent");
+    const img = document.createElement("img");
+    img.src = url;
+    img.alt = alt;
+    img.style.width = width;
+    aside.appendChild(img);
+}
+
+function addNoteToAside(note) {
+    const aside = document.querySelector(".asideContent");
+    const noteBox = document.createElement("div");
+    noteBox.textContent = note;
+    noteBox.style.backgroundColor = "#f9f9a1";
+    noteBox.style.padding = "10px";
+    noteBox.style.marginTop = "10px";
+    noteBox.style.borderRadius = "8px";
+    aside.appendChild(noteBox);
+}
+
+function clearAside() {
+    const aside = document.querySelector(".asideContent");
+    aside.innerHTML = "";
+}
