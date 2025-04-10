@@ -8,5 +8,3 @@ addParagraphToMain("Hi, happy job shadowing.");
 embedYTVideoInTheMainArea("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
 
 AddMiniGame("GuessTheWord", "asideContent1");
-
-
