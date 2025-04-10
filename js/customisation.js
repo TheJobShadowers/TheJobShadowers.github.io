@@ -1,3 +1,6 @@
+// Function to get a random word from the list
+let previousWord = "";
+
 function changeHeaderBackground(color) {
     document.querySelector("header").style.backgroundColor = color;
 }
@@ -361,8 +364,7 @@ function createGuessTheWord(container) {
     submitBtn.onclick = handleGuess;
     nextBtn.onclick = nextWord;
 
-    // Function to get a random word from the list
-    let previousWord = "";
+
 
     function getRandomWord(wordList) {
         let newWord;
