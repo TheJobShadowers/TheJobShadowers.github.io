@@ -300,6 +300,7 @@ function createGuessTheWord(container) {
         currentWord = getRandomWord(words);
         currentWordState = Array(currentWord.word.length).fill("_");
         updateWordDisplay();
+        hintEl.textContent = `Hint: ${currentWord.hint}`;
         feedback.textContent = "";
         input.value = "";
         input.disabled = false;
@@ -361,7 +362,14 @@ function createGuessTheWord(container) {
     nextBtn.onclick = nextWord;
 
     // Function to get a random word from the list
+    let previousWord = "";
+
     function getRandomWord(wordList) {
-        return wordList[Math.floor(Math.random() * wordList.length)];
+        let newWord;
+        do {
+            newWord = wordList[Math.floor(Math.random() * wordList.length)];
+        } while (newWord.word === previousWord);
+        previousWord = newWord.word;
+        return newWord;
     }
 }
