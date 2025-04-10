@@ -136,14 +136,11 @@ function clearAside() {
 }
 
 
-function AddMiniGame(gameName, target = "main") {
-    const container =
-        target === "aside"
-            ? document.querySelector(".asideContent")
-            : document.querySelector(".mainContent");
+function AddMiniGame(gameName, targetId = "mainContent") {
+    const container = document.querySelector(`.${targetId}`);
 
     if (!container) {
-        console.error("Target container not found");
+        console.error(`Target container ".${targetId}" not found`);
         return;
     }
 
@@ -151,16 +148,19 @@ function AddMiniGame(gameName, target = "main") {
         case "MathQuiz":
             createMathQuiz(container);
             break;
-        // Future games can be added here
-        case "GKQuiz":
-        case "Hangman":
         case "GuessTheWord":
             createGuessTheWord(container);
+            break;
+        // Future games
+        case "GKQuiz":
+        case "Hangman":
+            container.innerHTML += `<p>The game "${gameName}" will be available soon!</p>`;
             break;
         default:
             container.innerHTML += `<p>Game "${gameName}" not recognized.</p>`;
     }
 }
+
 
 // -------------------- MATH QUIZ GAME --------------------
 

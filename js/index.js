@@ -11,4 +11,4 @@ addImageToAside("https://picsum.photos/id/237/200/300", "image!");
 addNoteToAside("Fact: Pizza 🍕 for lunch!");
 
 
-AddMiniGame("GuessTheWord");
+AddMiniGame("GuessTheWord", "asideContent1");
